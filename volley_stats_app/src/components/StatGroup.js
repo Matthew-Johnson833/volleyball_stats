@@ -1,4 +1,5 @@
 // import all buttons from their component folders
+import { useState } from "react";
 import ServingAttemptBtn from "./servingButtonComponents/ServingAttemptBtn";
 import ServingAceBtn from "./servingButtonComponents/ServingAceBtn";
 import ServingErrorBtn from "./servingButtonComponents/ServingErrorBtn";
@@ -22,8 +23,32 @@ import DefenseDigBtn from "./defenseButtonComponents/DefenseDigBtn";
 import DefenseErrorBtn from "./defenseButtonComponents/DefenseErrorBtn";
 import stick from "./stick_test.jpeg";
 
+const StatGroup = () => {
 
-const StatGroup = ({ onClick }) => {
+  // key:value array where playerStats is a nested key:value array 
+  // what if I put name/number/position into its own nested array and leave the stats on the base level?
+  // do I need to even nest the stats? Why not just keep it at a single level and then only display the stats when it's needed?
+
+  // unsure if working? maybe not reaching the console.log()
+  const incrementAttempt = () => {
+    setPlayerStats([... playerStats, {
+      hittingAttempts: playerStats.hittingAttempts + 1,
+    }])
+    console.log( playerStats.hittingAttempts );
+  }
+
+  const [playerStats, setPlayerStats] = useState([{
+    playerID: 1,
+    playerName: 'Matthew Johnson',
+    playerNumber: '33',
+    playerPosition: 'OH',
+    hittingAttempts: 0,
+    hittingKills: 0,
+    hittingErrors: 0,
+    // hittingPercentage: ((hittingKills - hittingErrors) / hittingAttempts),
+
+  }])
+
   return (
     <div className="stat-group">
       <div className="player-info">
@@ -45,6 +70,8 @@ const StatGroup = ({ onClick }) => {
       {/* Some buttons will only have a single function
           Most buttons will handle multiple functions consecutively
           https://www.codegrepper.com/code-examples/javascript/multiple+functons+in+one+button+react
+
+          Button Components will house their unique functions, StatGroup will house the state changes for the available buttons 
       */}
       <div className="stat-buttons">
         {/* Serving Points begin after the home team score is incremented. Only the player in bottom right position is accessible (Service Buttons) 
@@ -56,7 +83,7 @@ const StatGroup = ({ onClick }) => {
               ACE button will increment Service ACE stat then increment home team score -> begin new Serving point
               ERR button will increment Service ERR stat then increment away team score -> begin new Passing point
           */}
-          <h6>SERVING</h6>
+          <h6 style={{ color: '#90BE6D' }}>SERVING</h6>
           <div className="serving-btns-individual">
             <ServingAttemptBtn />
             <ServingAceBtn />
@@ -69,10 +96,10 @@ const StatGroup = ({ onClick }) => {
               KILL button will increment Hitting KILL stat then increment home team score -> begin new Serving point
               ERR button will increment Hitting ERR stat then increment away team score -> begin new Passing point
           */}
-          <h6>HITTING</h6>
+          <h6 style={{ color: '#F8961E' }}>HITTING</h6>
           <div className="hitting-btns-individual">
             {/* onClick function built into component file is not being called */}
-            <HittingAttemptBtn />
+            <HittingAttemptBtn onClick={incrementAttempt}/>
             <HittingKillBtn />
             <HittingErrorBtn />
           </div>
@@ -82,7 +109,7 @@ const StatGroup = ({ onClick }) => {
               All buttons perform the same action 
               Increment the relevent stat then make hitting, blocking, setting, and defense buttons accessible
           */}
-          <h6>PASSING</h6>
+          <h6 style={{ color: '#1780A1' }}>PASSING</h6>
           <div className="passing-btns-individual">
             <PassingZeroBtn />
             <PassingOneBtn />
@@ -102,7 +129,7 @@ const StatGroup = ({ onClick }) => {
                     add 3rd AST button press, increment home point, begin new Serving Point
               ERR button will increment Blocking ERR stat then increment away team score -> begin new Passing point
           */}
-          <h6>BLOCKING</h6>
+          <h6 style={{ color: '#E71D36' }}>BLOCKING</h6>
           <div className="blocking-btns-individual">
             <BlockingAttemptBtn />
             <BlockingSoloBtn />
@@ -116,7 +143,7 @@ const StatGroup = ({ onClick }) => {
               AST button will increment Setting AST stat -> limit button presses to hitting KILL button
               ERR button will increment Setting ERR stat then increment away team score -> begin new Passing point
           */}
-          <h6>SETTING</h6>
+          <h6 style={{ color: '#FFBD00' }}>SETTING</h6>
           <div className="setting-btns-individual">
             <SettingAttemptBtn />
             <SettingAssistBtn />
@@ -129,7 +156,7 @@ const StatGroup = ({ onClick }) => {
               DIG button will increment Defense DIG stat -> hitting, blocking, setting, and defense buttons are still accessible
               ERR button will increment Defense ERR stat then increment away team score -> begin new Passing point
           */}
-          <h6>DEFENSE</h6>
+          <h6 style={{ color: '#9163CB' }}>DEFENSE</h6>
           <div className="defense-btns-individual">
             <DefenseAttemptBtn />
             <DefenseDigBtn />

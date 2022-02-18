@@ -1,8 +1,10 @@
+function incrementKill(){
+  console.log('Successful Kill');
+}
 
-
-const HittingKillBtn = ({ onClick }) => {
+const HittingKillBtn = () => {
   return (
-    <button onClick={onClick}>
+    <button onClick={incrementKill}>
       KILL
     </button>
   )

@@ -1,11 +1,10 @@
-
-function onClick(){
-  console.log('clicked');
+function incrementHittingAttempt(){
+  console.log('Hitting Attempt');
 }
 
-const HittingAttemptBtn = ({ onClick }) => {
+const HittingAttemptBtn = () => {
   return (
-    <button onClick={onClick}>
+    <button onClick={incrementHittingAttempt}>
       ATT
     </button>
   )

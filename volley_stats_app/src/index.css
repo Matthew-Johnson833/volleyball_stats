@@ -76,53 +76,55 @@ code {
 .blocking-btns-individual, .setting-btns-individual, .defense-btns-individual {
   display: flex;
   justify-content:space-around;
-} 
-/* .serving-btns-individual button, .hitting-btns-individual button, .passing-btns-individual button,
-.blocking-btns-individual button, .setting-btns-individual button, .defense-btns-individual button {
-border: 0px 10px;
-} */
-
-.serving-btns-individual button {
+} button {
+  border-style: solid;
+}.serving-btns-individual button {
   color: var(--textColorWhite);
   font-weight: bold;
   cursor: pointer;
+  border-color: var(--servingBtnColor);
   background-color: var(--servingBtnColor);
   padding: 0px 15px;
-  border-radius: 15%;
+  border-radius: 10%;
 } .hitting-btns-individual button {
   color: var(--textColorWhite);
   font-weight: bold;
   cursor: pointer;
+  border-color: var(--hittingBtnColor);
   background-color: var(--hittingBtnColor);
   padding: 0px 15px;
-  border-radius: 15%;
+  border-radius: 10%;
 } .passing-btns-individual button {
   color: var(--textColorWhite);
   font-weight: bold;
   cursor: pointer;
+  border-color: var(--passingBtnColor);
   background-color: var(--passingBtnColor);
   padding: 0px 10px;
-  border-radius: 15%;
+  border-radius: 10%;
 } .blocking-btns-individual button {
   color: var(--textColorWhite);
   font-weight: bold;
   cursor: pointer;
+  border-color: var(--blockingBtnColor);
   background-color: var(--blockingBtnColor);
   margin: 0px 2px;
   padding: 0px 10px;
-  border-radius: 15%;
+  border-radius: 10%;
 } .setting-btns-individual button {
   color: var(--textColorWhite);
   font-weight: bold;
   cursor: pointer;
+  border-color: var(--settingBtnColor);
   background-color: var(--settingBtnColor);
   padding: 0px 15px;
-  border-radius: 15%;
+  border-radius: 10%;
 } .defense-btns-individual button {
   color: var(--textColorWhite);
   font-weight: bold;
   cursor: pointer;
+  border-color: var(--defenseBtnColor);
   background-color: var(--defenseBtnColor);
   padding: 0px 15px;
-  border-radius: 15%;
+  border-radius: 10%;
 }
