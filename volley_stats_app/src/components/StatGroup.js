@@ -1,4 +1,7 @@
 import { ReactPropTypes } from "react";
+import HittingAttemptBtn from "./hittingButtonComponents/HittingAttemptBtn";
+import HittingKillBtn from "./hittingButtonComponents/HittingKillBtn";
+import HittingErrorBtn from "./hittingButtonComponents/HittingErrorBtn";
 import stick from "./stick_test.jpeg";
 
 
@@ -50,9 +53,10 @@ const StatGroup = ({ onClick }) => {
           */}
           <h6>HITTING</h6>
           <div className="hitting-btns-individual">
-            <button onClick={onClick}>ATT</button>
-            <button onClick={onClick}>KILL</button>
-            <button onClick={onClick}>ERR</button>
+            {/* onClick function built into component file is not being called */}
+            <HittingAttemptBtn />
+            <HittingKillBtn />
+            <HittingErrorBtn />
           </div>
         </div>
         <div className="passing-btns">

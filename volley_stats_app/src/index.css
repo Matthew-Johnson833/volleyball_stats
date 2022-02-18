@@ -83,22 +83,46 @@ border: 0px 10px;
 } */
 
 .serving-btns-individual button {
+  color: var(--textColorWhite);
+  font-weight: bold;
+  cursor: pointer;
   background-color: var(--servingBtnColor);
   padding: 0px 15px;
+  border-radius: 15%;
 } .hitting-btns-individual button {
+  color: var(--textColorWhite);
+  font-weight: bold;
+  cursor: pointer;
   background-color: var(--hittingBtnColor);
   padding: 0px 15px;
+  border-radius: 15%;
 } .passing-btns-individual button {
+  color: var(--textColorWhite);
+  font-weight: bold;
+  cursor: pointer;
   background-color: var(--passingBtnColor);
   padding: 0px 10px;
+  border-radius: 15%;
 } .blocking-btns-individual button {
+  color: var(--textColorWhite);
+  font-weight: bold;
+  cursor: pointer;
   background-color: var(--blockingBtnColor);
   margin: 0px 2px;
   padding: 0px 10px;
+  border-radius: 15%;
 } .setting-btns-individual button {
+  color: var(--textColorWhite);
+  font-weight: bold;
+  cursor: pointer;
   background-color: var(--settingBtnColor);
   padding: 0px 15px;
+  border-radius: 15%;
 } .defense-btns-individual button {
+  color: var(--textColorWhite);
+  font-weight: bold;
+  cursor: pointer;
   background-color: var(--defenseBtnColor);
   padding: 0px 15px;
+  border-radius: 15%;
 }
