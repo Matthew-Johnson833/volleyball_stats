@@ -1,7 +1,25 @@
-import { ReactPropTypes } from "react";
+// import all buttons from their component folders
+import ServingAttemptBtn from "./servingButtonComponents/ServingAttemptBtn";
+import ServingAceBtn from "./servingButtonComponents/ServingAceBtn";
+import ServingErrorBtn from "./servingButtonComponents/ServingErrorBtn";
 import HittingAttemptBtn from "./hittingButtonComponents/HittingAttemptBtn";
 import HittingKillBtn from "./hittingButtonComponents/HittingKillBtn";
 import HittingErrorBtn from "./hittingButtonComponents/HittingErrorBtn";
+import PassingZeroBtn from "./passingButtonComponents/PassingZeroBtn";
+import PassingOneBtn from "./passingButtonComponents/PassingOneBtn"
+import PassingTwoBtn from "./passingButtonComponents/PassingTwoBtn"
+import PassingThreeBtn from "./passingButtonComponents/PassingThreeBtn"
+import PassingFourBtn from "./passingButtonComponents/PassingFourBtn"
+import BlockingAttemptBtn from "./blockingButtonComponents/BlockingAttemptBtn";
+import BlockingSoloBtn from "./blockingButtonComponents/BlockingSoloBtn";
+import BlockingAssistBtn from "./blockingButtonComponents/BlockingAssistBtn";
+import BlockingErrorBtn from "./blockingButtonComponents/BlockingErrorBtn";
+import SettingAttemptBtn from "./settingButtonComponents/SettingAttemptBtn";
+import SettingAssistBtn from "./settingButtonComponents/SettingAssistBtn";
+import SettingErrorBtn from "./settingButtonComponents/SettingErrorBtn";
+import DefenseAttemptBtn from "./defenseButtonComponents/DefenseAttemptBtn";
+import DefenseDigBtn from "./defenseButtonComponents/DefenseDigBtn";
+import DefenseErrorBtn from "./defenseButtonComponents/DefenseErrorBtn";
 import stick from "./stick_test.jpeg";
 
 
@@ -40,9 +58,9 @@ const StatGroup = ({ onClick }) => {
           */}
           <h6>SERVING</h6>
           <div className="serving-btns-individual">
-            <button onClick={onClick}>ATT</button>
-            <button onClick={onClick}>ACE</button>
-            <button onClick={onClick}>ERR</button>
+            <ServingAttemptBtn />
+            <ServingAceBtn />
+            <ServingErrorBtn />
           </div>
         </div>
         <div className="hitting-btns">
@@ -66,11 +84,11 @@ const StatGroup = ({ onClick }) => {
           */}
           <h6>PASSING</h6>
           <div className="passing-btns-individual">
-            <button onClick={onClick}>0</button>
-            <button onClick={onClick}>1</button>
-            <button onClick={onClick}>2</button>
-            <button onClick={onClick}>3</button>
-            <button onClick={onClick}>4</button>
+            <PassingZeroBtn />
+            <PassingOneBtn />
+            <PassingTwoBtn />
+            <PassingThreeBtn />
+            <PassingFourBtn />
           </div>
         </div>
         <div className="blocking-btns">
@@ -86,10 +104,10 @@ const StatGroup = ({ onClick }) => {
           */}
           <h6>BLOCKING</h6>
           <div className="blocking-btns-individual">
-            <button onClick={onClick}>ATT</button>
-            <button onClick={onClick}>SOLO</button>
-            <button onClick={onClick}>AST</button>
-            <button onClick={onClick}>ERR</button>
+            <BlockingAttemptBtn />
+            <BlockingSoloBtn />
+            <BlockingAssistBtn />
+            <BlockingErrorBtn />
           </div>
         </div>
         <div className="setting-btns">
@@ -100,9 +118,9 @@ const StatGroup = ({ onClick }) => {
           */}
           <h6>SETTING</h6>
           <div className="setting-btns-individual">
-            <button onClick={onClick}>ATT</button>
-            <button onClick={onClick}>AST</button>
-            <button onClick={onClick}>ERR</button>
+            <SettingAttemptBtn />
+            <SettingAssistBtn />
+            <SettingErrorBtn />
           </div>
         </div>
         <div className="defense-btns">
@@ -113,9 +131,9 @@ const StatGroup = ({ onClick }) => {
           */}
           <h6>DEFENSE</h6>
           <div className="defense-btns-individual">
-            <button onClick={onClick}>ATT</button>
-            <button onClick={onClick}>DIG</button>
-            <button onClick={onClick}>ERR</button>
+            <DefenseAttemptBtn />
+            <DefenseDigBtn />
+            <DefenseErrorBtn />
           </div>
         </div>
       </div>
