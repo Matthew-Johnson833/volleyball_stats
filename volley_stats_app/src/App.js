@@ -1,4 +1,3 @@
-import { useState } from "react";
 import StatGroup from "./components/StatGroup";
 
 function App() {

@@ -31,7 +31,7 @@ const StatGroup = () => {
 
   // unsure if working? maybe not reaching the console.log()
   const incrementAttempt = () => {
-    setPlayerStats([... playerStats, {
+    setPlayerStats([...playerStats, {
       hittingAttempts: playerStats.hittingAttempts + 1,
     }])
     console.log( playerStats.hittingAttempts );
@@ -53,7 +53,7 @@ const StatGroup = () => {
     <div className="stat-group">
       <div className="player-info">
         <div className="player-image">
-          <img src={stick} alt="Stick Figure image" height={100} width={75} />
+          <img src={stick} alt="" height={100} width={75} />
         </div>
         <div className="player-name">
           Matthew Johnson
