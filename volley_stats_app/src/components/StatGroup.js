@@ -4,8 +4,8 @@ import ServingAttemptBtn from "./servingButtonComponents/ServingAttemptBtn";
 import ServingAceBtn from "./servingButtonComponents/ServingAceBtn";
 import ServingErrorBtn from "./servingButtonComponents/ServingErrorBtn";
 import HittingAttemptBtn from "./hittingButtonComponents/HittingAttemptBtn";
-import HittingKillBtn from "./hittingButtonComponents/HittingKillBtn";
-import HittingErrorBtn from "./hittingButtonComponents/HittingErrorBtn";
+// import HittingKillBtn from "./hittingButtonComponents/HittingKillBtn";
+// import HittingErrorBtn from "./hittingButtonComponents/HittingErrorBtn";
 import PassingZeroBtn from "./passingButtonComponents/PassingZeroBtn";
 import PassingOneBtn from "./passingButtonComponents/PassingOneBtn"
 import PassingTwoBtn from "./passingButtonComponents/PassingTwoBtn"
@@ -98,10 +98,9 @@ const StatGroup = () => {
           */}
           <h6 style={{ color: '#F8961E' }}>HITTING</h6>
           <div className="hitting-btns-individual">
-            {/* onClick function built into component file is not being called */}
-            <HittingAttemptBtn onClick={incrementAttempt}/>
-            <HittingKillBtn />
-            <HittingErrorBtn />
+            <HittingAttemptBtn />
+            {/* <HittingKillBtn />
+            <HittingErrorBtn /> */}
           </div>
         </div>
         <div className="passing-btns">
@@ -167,10 +166,5 @@ const StatGroup = () => {
     </div>
   )
 }
-
-// StatGroup.propTypes = {
-//   onClick: PropTypes.function,
-// }
-
 
 export default StatGroup
