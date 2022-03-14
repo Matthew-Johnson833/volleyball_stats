@@ -21,6 +21,7 @@ const BlockingButtons = () => {
   function setBlockingSolo() {
     setBlockingArray(prevState => ({
       ...prevState, 
+      blockingAttempts: (blockingArray.blockingAttempts + 1),
       blockingSolo: (blockingArray.blockingSolo + 1)
     }))
     console.log("Solo Blocks: " + blockingArray.blockingSolo);
@@ -28,6 +29,7 @@ const BlockingButtons = () => {
   function setBlockingAssist() {
     setBlockingArray(prevState => ({
       ...prevState, 
+      blockingAttempts: (blockingArray.blockingAttempts + 1),
       blockingAssist: (blockingArray.blockingAssist + 1)
     }))
     console.log("Blocking Assist: " + blockingArray.blockingAssist);
@@ -35,14 +37,22 @@ const BlockingButtons = () => {
   function setBlockingError() {
     setBlockingArray(prevState => ({
       ...prevState, 
+      blockingAttempts: (blockingArray.blockingAttempts + 1),
       blockingError: (blockingArray.blockingError + 1)
     }))
     console.log("Blocking Error: " + blockingArray.blockingError);
   }
   function generateTotalBlocks () {
-    console.log("Total Blocks: "+ (((blockingArray.blockingAssist * 0.5) + blockingArray.blockingSolo)).toFixed(2));
-  }
+    let calcTotalBlocks = (((blockingArray.blockingAssist * 0.5) + blockingArray.blockingSolo)).toFixed(2);
 
+    setBlockingArray(prevState => ({
+      ...prevState,
+      blockingAverage: calcTotalBlocks
+    }))
+    localStorage.setItem('blockingArray', JSON.stringify(blockingArray));
+
+    console.log("Total Blocks: "+ calcTotalBlocks);
+  }
 
   return (
     <div>
