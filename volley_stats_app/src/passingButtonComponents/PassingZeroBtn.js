@@ -10,6 +10,7 @@ const PassingButtons = () => {
     passing3Scores: 0,
     passing4Scores: 0,
     totalPasses: 0,
+    passingAverage: 0,
     });
     function setPassing0Score() {
       setPassingArray(prevState => ({
@@ -55,9 +56,18 @@ const PassingButtons = () => {
     }
 
     function generatePassingAverage() {
+      // React state doesn't immediately update. Need to click twice to get proper values
+      let calcPassingAverage = (((passingArray.passing0Scores * 0) + passingArray.passing1Scores + (passingArray.passing2Scores * 2) +
+      (passingArray.passing3Scores * 3) + (passingArray.passing4Scores * 4)) / passingArray.totalPasses).toFixed(2);
+
+      setPassingArray(prevState => ({
+        ...prevState,
+        passingAverage: calcPassingAverage
+      }))
+      localStorage.setItem('passingArray', JSON.stringify(passingArray));
+
       console.log("Total Passes: " + passingArray.totalPasses);
-      console.log("Passing Average: "+ (((passingArray.passing0Scores * 0) + passingArray.passing1Scores + (passingArray.passing2Scores * 2) +
-                                          (passingArray.passing3Scores * 3) + (passingArray.passing4Scores * 4)) / passingArray.totalPasses).toFixed(2));
+      console.log(calcPassingAverage);
     }
 
   return (
